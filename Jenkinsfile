@@ -1,10 +1,6 @@
 pipeline {
  agent {
-   docker {
-     label ‘linux’
-     image ‘dev-x86_64-20180806_1111’
-     args ‘-v /tmp:/tmp -p 80:80’
-   }
+   label ‘linux’
  }
  environment {
    GIT_COMMITTER_NAME = ‘jenkins’
