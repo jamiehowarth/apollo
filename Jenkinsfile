@@ -6,7 +6,7 @@ pipeline {
    GIT_COMMITTER_NAME = 'jenkins'
  }
  options {
-   timeout(30, MINUTES)
+   timeout(time: 1, unit: 'HOURS')
  }
  stages {
    stage('Initialize') {
