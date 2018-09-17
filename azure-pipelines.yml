@@ -10,34 +10,34 @@ steps:
 - script: |
     cp scripts/AGREEMENT.txt ${HOME}/.apollo_agreement.txt
     ./docker/scripts/dev_start.sh -t dev-x86_64-20180806_1111
-    ./apollo-docker.sh lint
-    ./apollo-docker.sh cibuild
-    ./apollo-docker.sh citest_basic
-    ./apollo-docker.sh citest_map
-    ./apollo-docker.sh citest_dreamview
-    ./apollo-docker.sh citest_perception
+    ./apollo_docker.sh lint
+    ./apollo_docker.sh cibuild
+    ./apollo_docker.sh citest_basic
+    ./apollo_docker.sh citest_map
+    ./apollo_docker.sh citest_dreamview
+    ./apollo_docker.sh citest_perception
   displayName: 'Initialize'
 - script: |
     echo CI Lint
-    ./apollo-docker.sh lint
+    ./apollo_docker.sh lint
   displayName: 'Lint'
 - script: |
     echo CI Build
-    ./apollo-docker.sh cibuild
+    ./apollo_docker.sh cibuild
   displayName: 'CI Build'
 - script: |
     echo citest_basic
-    ./apollo-docker.sh citest_basic
+    ./apollo_docker.sh citest_basic
   displayName: 'citest_basic'
 - script: |
     echo citest_map
-    ./apollo-docker.sh citest_map
+    ./apollo_docker.sh citest_map
   displayName: 'citest_map'
 - script: |
     echo citest_dreamview
-    ./apollo-docker.sh citest_dreamview
+    ./apollo_docker.sh citest_dreamview
   displayName: 'citest_dreamview'
 - script: |
     echo citest_perception
-    ./apollo-docker.sh citest_perception
+    ./apollo_docker.sh citest_perception
   displayName: 'citest_perception'
