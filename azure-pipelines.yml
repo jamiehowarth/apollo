@@ -7,10 +7,11 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    cp scripts/AGREEMENT.txt ${HOME}/.apollo_agreement.txt
+    ./docker/scripts/dev_start.sh -t dev-x86_64-20180806_1111
+  displayName: 'Initialize'
+- script: 
+    echo CI Lint
+    ./apollo-docker.sh lint
+  displayName: 'Lint'
