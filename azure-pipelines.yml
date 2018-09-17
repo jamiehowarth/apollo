@@ -10,12 +10,6 @@ steps:
 - script: |
     cp scripts/AGREEMENT.txt ${HOME}/.apollo_agreement.txt
     ./docker/scripts/dev_start.sh -t dev-x86_64-20180806_1111
-    ./apollo_docker.sh lint
-    ./apollo_docker.sh cibuild
-    ./apollo_docker.sh citest_basic
-    ./apollo_docker.sh citest_map
-    ./apollo_docker.sh citest_dreamview
-    ./apollo_docker.sh citest_perception
   displayName: 'Initialize'
 - script: |
     echo CI Lint
