@@ -15,9 +15,34 @@ pipeline {
        sh './docker/scripts/dev_start.sh -t dev-x86_64-20180806_1111'
      }
    }
-   stage('Lint') {
+   stage('lint') {
      steps {
        sh './apollo_docker.sh lint'
+     }
+   }
+  stage('cibuild') {
+     steps {
+       sh './apollo_docker.sh cibuild'
+     }
+   }
+  stage('citest_basic') {
+     steps {
+       sh './apollo_docker.sh citest_basic'
+     }
+   }
+  stage('citest_map') {
+     steps {
+       sh './apollo_docker.sh citest_map'
+     }
+   }
+  stage('citest_dreamview') {
+     steps {
+       sh './apollo_docker.sh citest_dreamview'
+     }
+   }
+  stage('citest_perception') {
+     steps {
+       sh './apollo_docker.sh citest_perception'
      }
    }
  }
