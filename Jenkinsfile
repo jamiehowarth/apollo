@@ -17,7 +17,7 @@ pipeline {
    }
    stage('lint') {
      steps {
-       sh './apollo_docker.sh lint'
+       sh './apollo.sh lint'
      }
    }
   stage('cibuild') {
