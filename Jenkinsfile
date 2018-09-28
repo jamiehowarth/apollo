@@ -1,6 +1,5 @@
 pipeline {
  agent {
-   label 'linux'
  }
  environment {
    GIT_COMMITTER_NAME = 'jenkins'
