@@ -1,7 +1,9 @@
 pipeline {
- //agent {
- //}
- agent any
+agent {
+    docker {
+        image 'docker'
+    }
+} //agent any
  
  environment {
    GIT_COMMITTER_NAME = 'jenkins'
