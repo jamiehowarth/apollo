@@ -1,9 +1,11 @@
 pipeline {
 agent {
-    docker {
-        image 'docker:dind'
-    }
-} //agent any
+    label 'linux'
+   // docker {
+   //     image 'docker:dind'
+   // }
+} 
+//agent any
  
  environment {
    GIT_COMMITTER_NAME = 'jenkins'
